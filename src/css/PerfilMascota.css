@@ -1,0 +1,48 @@
+.mascota-card {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mascota-card-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.mascota-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+
+.mascota-card-body {
+  font-family: Arial, sans-serif;
+}
+
+.mascota-card-body h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.mascota-card-body p {
+  font-size: 1rem;
+  margin: 5px 0;
+  color: #555;
+}
+
+.mascota-card-body strong {
+  font-weight: bold;
+}
+
+.mascota-card-body p:last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,125 @@
+/* Estilos específicos para el componente HogarTemporal */
+.temporary-home-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #d4edda;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.temporary-home-title {
+  font-size: 2.5rem;
+  color: #fff; /* Ahora el título será blanco */
+  margin-bottom: 10px;
+}
+
+.temporary-home-card-description {
+  font-size: 1.2rem;
+  color: #fff; /* Descripción en blanco */
+  margin-bottom: 20px;
+}
+
+.temporary-home-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+.temporary-home-card {
+  background-color: #97c0a1;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: left;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  padding: 30px 0;
+  color: white;
+}
+
+.temporary-home-card:hover {
+  transform: scale(1.05); /* Efecto al pasar el ratón */
+}
+
+.temporary-home-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.temporary-home-card-title {
+  text-align: left;
+  font-size: 1.5rem;
+  color: white;
+  margin: 10px 0;
+}
+
+.temporary-home-card-description {
+  font-size: 1rem;
+  color: white;
+  padding: 0 10px 20px;
+}
+
+/* Nuevos estilos para h2 y p */
+.heading-large {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff; /* Color para h2 */
+  margin-top: 30px;
+}
+
+.paragraph-large {
+  font-size: 1.1rem;
+  color: #666; /* Color para los párrafos */
+  margin-bottom: 15px;
+  text-align: left;
+  margin-left: 50px;
+}
+
+/* Estilo para el número en el lado izquierdo */
+.number-prefix {
+  font-size: 5rem;
+  margin-right: 20px;
+  color: #fff;
+}
+
+/* Estilo para líneas con puntos */
+.hr-dotted {
+  border: none;
+  border-top: 5px dotted white;
+  margin: 10px 0;
+}
+
+/* Estilos para la sección hero */
+.hero-section-temporary {
+  background-image: url("../img/Perritos10.jpg"); /* Cambia la URL por la imagen deseada */
+  background-size: cover;
+  background-position: center;
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+}
+
+.hero-section-temporary .container {
+  color: #fff;
+  text-align: left;
+  max-width: 600px;
+}
+
+.hero-section-temporary h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: left;
+  margin-left: -50px;
+  color: #97c0a1;
+}
+
+.hero-section-temporary p {
+  font-size: 1rem;
+  text-align: left;
+  margin-left: -50px;
+  color: #fff;
+}
