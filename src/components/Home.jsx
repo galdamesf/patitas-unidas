@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "../css/Home.css"; // Asegúrate de tener el CSS actualizado
@@ -25,6 +24,13 @@ const Home = () => {
       <div className="jumbotron jumbotron-fluid hero-section-home">
         <div className="container text-center text-white">
           <Row>
+            <Col></Col>
+          </Row>
+        </div>
+      </div>
+      <div className="jumbotron jumbotron-fluid hero-section-home">
+        <div className="container text-center text-white">
+          <Row>
             <Col>
               <h1 className="display-4 hero-title">
                 ¡Encuentra a tu mascota perdida!
@@ -43,6 +49,13 @@ const Home = () => {
               </Button>
             </Col>
           </Row>
+        </div>
+        <div className="jumbotron jumbotron-fluid hero-section-home">
+          <div className="container text-center text-white">
+            <Row>
+              <Col></Col>
+            </Row>
+          </div>
         </div>
       </div>
 

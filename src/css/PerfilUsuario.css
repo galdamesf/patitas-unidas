@@ -1,0 +1,23 @@
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espaciado entre los botones */
+}
+
+.card-body .btn {
+  width: 30%;
+  padding: 3px;
+}
+
+.eliminar-mascota-btn {
+  width: 100%; /* Eliminar el ancho limitado y asegurarse que ocupe todo el ancho del contenedor */
+  padding: 10px;
+  background-color: red; /* Color de fondo inicial */
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease; /* Transición suave de cambio de color */
+}
+
+.eliminar-mascota-btn:hover {
+  background-color: orange; /* Cambia a naranja al hacer clic */
+}

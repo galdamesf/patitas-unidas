@@ -1,19 +1,23 @@
 /* home-page-container */
 .home-page-container {
   font-family: "Arial", sans-serif;
+  background-color: #fff;
+  padding-bottom: 50px;
 }
 
 .hero-section-home {
-  background-image: url("../img/Perro.jpg"); /* Cambia esta ruta por la imagen que quieras usar */
-  background-size: cover;
-  background-position: center;
-  height: 60vh;
-  color: white;
-  padding: 20px;
+  background-image: url("../img/Perro.jpg"); /* Cambia la URL por la imagen deseada */
+  background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+  background-position: center center; /* Centra la imagen tanto horizontal como verticalmente */
+  background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+  padding: 60px 0;
   display: flex;
-  justify-content: center;
   align-items: center;
-  position: relative;
+  justify-content: center; /* Asegura que el contenido se centre */
+  width: 100%;
+  text-align: center; /* Centra el texto dentro del contenedor */
+  flex-direction: column; /* Coloca los elementos en una columna */
+  position: relative; /* Necesario para el pseudo-elemento ::before */
 }
 
 /* Agrega un fondo oscuro semi-transparente para mejorar la legibilidad */
@@ -32,11 +36,13 @@
   font-size: 3rem;
   font-weight: bold;
   color: white;
+  margin-bottom: 20px; /* Espacio entre el título y el párrafo */
 }
 
 .hero-description {
   font-size: 1.2rem;
   color: white;
+  margin-bottom: 40px; /* Espacio entre el párrafo y otros elementos */
 }
 
 .home-h2 {

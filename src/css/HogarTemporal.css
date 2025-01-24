@@ -28,6 +28,10 @@
   width: 100%;
 }
 
+.card:hover {
+  transform: translateY(0px);
+}
+
 .temporary-home-card {
   background-color: #97c0a1;
   border-radius: 8px;
@@ -40,9 +44,9 @@
   color: white;
 }
 
-.temporary-home-card:hover {
-  transform: scale(1.05); /* Efecto al pasar el ratón */
-}
+/*.temporary-home-card:hover {
+  transform: scale(1.05); 
+} */
 
 .temporary-home-card-image {
   width: 100%;
@@ -96,11 +100,14 @@
 /* Estilos para la sección hero */
 .hero-section-temporary {
   background-image: url("../img/Perritos10.jpg"); /* Cambia la URL por la imagen deseada */
-  background-size: cover;
-  background-position: center;
+  background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+  background-position: center center; /* Centra la imagen tanto horizontal como verticalmente */
+  background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
   padding: 60px 0;
   display: flex;
   align-items: center;
+  justify-content: center; /* Asegura que el contenido se centre */
+  width: 100%;
 }
 
 .hero-section-temporary .container {

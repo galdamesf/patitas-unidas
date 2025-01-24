@@ -1,85 +1,151 @@
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    padding: 20px;
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .app-name {
-    color: #2f4b7c;
-    font-size: 24px;
-  }
-  
-  .profile-icon {
-    color: #f95d6a;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  .filter-container {
-    margin-bottom: 20px;
-  }
-  
-  .mb-3 {
-    margin-bottom: 15px;
-  }
-  
-  .form-label {
-    color: #003f5c;
-    font-weight: bold;
-  }
-  
-  .form-control {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .btn-register {
-    width: 100%;
-    padding: 10px;
-    background-color: #f95d6a;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    margin-bottom: 20px;
-  }
-  
-  .btn-register:hover {
-    background-color: #ffa600;
-  }
-  
-  .list-group-item {
-    background-color: #ffffff;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 15px;
-  }
-  
-  .mascota-nombre {
-    color: #2f4b7c;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .registrado-por {
-    color: #ffa600;
-    font-style: italic;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.lista-mascotas-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.lista-mascotas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.lista-mascotas-app-name {
+  color: #2f4b7c;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.lista-mascotas-profile-icon {
+  color: #f95d6a;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Estilos para el filtro de búsqueda */
+.lista-mascotas-filter-container {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.lista-mascotas-filter-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2f4b7c;
+  margin-bottom: 15px;
+}
+
+.lista-mascotas-form-label {
+  color: #003f5c;
+  font-weight: bold;
+}
+
+.lista-mascotas-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.lista-mascotas-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #f95d6a;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.lista-mascotas-btn:hover {
+  background-color: #ffa600;
+}
+
+/* Estilos para la lista de mascotas */
+.lista-mascotas-list-group {
+  margin-top: 30px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.lista-mascotas-list-item {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  transition: box-shadow 0.3s;
+}
+
+.lista-mascotas-list-item:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.lista-mascotas-nombre {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.lista-mascotas-registrado-por {
+  color: #ffa600;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.lista-mascotas-btn {
+  padding: 6px 12px;
+  width: 150px;
+  font-size: 14px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Estilos para el jumbotron (imagen de fondo) */
+.jumbotron {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 80px 0;
+  border-radius: 5px;
+}
+
+.hero-section-lista {
+  background-image: url("../img/Perritos13.jpg"); /* Cambia la URL por la imagen deseada */
+  background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+  background-position: center center; /* Centra la imagen tanto horizontal como verticalmente */
+  background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+  padding: 150px 0; /* Mantiene la altura del jumbotron */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Asegura que el contenido se centre */
+  width: 100%;
+  text-align: center; /* Centra el texto dentro del contenedor */
+  flex-direction: column; /* Coloca los elementos en una columna */
+  position: relative; /* Necesario para el pseudo-elemento ::before */
+}
+
+.hero-section-lista .container h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero-section-lista .container p {
+  font-size: 1.25rem;
+}

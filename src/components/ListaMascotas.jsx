@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
-import "../css/ListaMascotas.css";
+import "../css/ListaMascotas.css"; // Asegúrate de tener el CSS actualizado
 
 function ListaMascotas() {
   const [mascotas, setMascotas] = useState([]);
@@ -48,71 +48,88 @@ function ListaMascotas() {
   }, [criterio, raza, color, comuna]);
 
   return (
-    <div className="container">
-      <header className="header">
-        <h1 className="app-name">Patitas Unidas</h1>
+    <div className="lista-mascotas-container">
+      <header className="lista-mascotas-header">
+        <h1 className="lista-mascotas-app-name"></h1>
         <FaUserCircle
-          className="profile-icon"
+          className="lista-mascotas-profile-icon"
           onClick={() => navigate("/perfil")}
         />
       </header>
-      <div className="filter-container">
-        <div className="mb-3">
-          <label htmlFor="criterio" className="form-label">
-            Buscar por Nombre
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="criterio"
-            value={criterio}
-            onChange={(e) => setCriterio(e.target.value)}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="raza" className="form-label">
-            Buscar por Raza
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="raza"
-            value={raza}
-            onChange={(e) => setRaza(e.target.value)}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="color" className="form-label">
-            Buscar por Color
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="color"
-            value={color}
-            onChange={(e) => setColor(e.target.value)}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="comuna" className="form-label">
-            Buscar por Comuna
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="comuna"
-            value={comuna}
-            onChange={(e) => setComuna(e.target.value)}
-          />
+      {/* Jumbotron con imagen de fondo */}
+      <div className="jumbotron jumbotron-fluid hero-section-lista">
+        <div className="container text-center text-white">
+          <h1 className="display-4">Lista de Mascotas Perdidas</h1>
         </div>
       </div>
-      <button className="btn-register" onClick={() => navigate("/registrar")}>
-        Registrar Mascota
-      </button>
-      <ul className="list-group">
+
+      <div className="lista-mascotas-filter-container card shadow-sm p-4 mb-4">
+        <h2 className="lista-mascotas-filter-title mb-4">Filtrar Mascotas</h2>
+        <div className="row g-3">
+          <div className="col-md-6">
+            <label htmlFor="criterio" className="lista-mascotas-form-label">
+              Buscar por Nombre
+            </label>
+            <input
+              type="text"
+              className="form-control lista-mascotas-input"
+              id="criterio"
+              value={criterio}
+              onChange={(e) => setCriterio(e.target.value)}
+            />
+          </div>
+          <div className="col-md-6">
+            <label htmlFor="raza" className="lista-mascotas-form-label">
+              Buscar por Raza
+            </label>
+            <input
+              type="text"
+              className="form-control lista-mascotas-input"
+              id="raza"
+              value={raza}
+              onChange={(e) => setRaza(e.target.value)}
+            />
+          </div>
+          <div className="col-md-6">
+            <label htmlFor="color" className="lista-mascotas-form-label">
+              Buscar por Color
+            </label>
+            <input
+              type="text"
+              className="form-control lista-mascotas-input"
+              id="color"
+              value={color}
+              onChange={(e) => setColor(e.target.value)}
+            />
+          </div>
+          <div className="col-md-6">
+            <label htmlFor="comuna" className="lista-mascotas-form-label">
+              Buscar por Comuna
+            </label>
+            <input
+              type="text"
+              className="form-control lista-mascotas-input"
+              id="comuna"
+              value={comuna}
+              onChange={(e) => setComuna(e.target.value)}
+            />
+          </div>
+        </div>
+      </div>
+
+      <ul className="lista-mascotas-list-group">
         {mascotas.map((mascota) => (
-          <li key={mascota.id_mascota} className="list-group-item">
-            <h5 className="mascota-nombre">{mascota.nombre}</h5>
+          <li key={mascota.id_mascota} className="lista-mascotas-list-item">
+            {/* Imagen de la mascota */}
+            <img
+              src={
+                mascota.imagen ||
+                "http://res.cloudinary.com/dyxvazlpg/image/upload/v1735070220/yohwpmac5cjysaez1puf.jpg"
+              } // Imagen de la mascota (si no existe, se usa una imagen por defecto)
+              className="card-img-top"
+              alt={mascota.nombre}
+            />
+            <h5 className="lista-mascotas-nombre">{mascota.nombre}</h5>
             <p>Raza: {mascota.raza}</p>
             <p>Color: {mascota.color}</p>
             <p>Estado: {mascota.estado}</p>
@@ -126,13 +143,13 @@ function ListaMascotas() {
               Ubicación:{" "}
               {`${mascota.calle}, ${mascota.numero}, ${mascota.comuna}, ${mascota.region}`}
             </p>
-            <p className="registrado-por">
+            <p className="lista-mascotas-registrado-por">
               Registrado por: {mascota.nombre_usuario}{" "}
               {mascota.apellido_usuario}
             </p>
             {mascota.id_usuario !== userId && (
               <button
-                className="btn btn-primary"
+                className="btn lista-mascotas-btn"
                 onClick={() =>
                   navigate(`/perfil_mascota/${mascota.id_mascota}`)
                 }

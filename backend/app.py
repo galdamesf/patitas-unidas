@@ -87,6 +87,7 @@ def registrar_mascota():
         estado = request.json.get('estado', None)
         ultima_visto = request.json.get('ultima_visto', None)
         ubicacion_actual = request.json.get('ubicacion_actual', None)
+        imagen_url = request.json.get('imagen_url', None)  # Agregado para manejar la URL de la imagen
         ubicacion = request.json.get('ubicacion', None)
 
         region = ubicacion.get('region', None)
@@ -109,10 +110,10 @@ def registrar_mascota():
         id_ubicacion = cursor.lastrowid
 
         query_mascota = """
-            INSERT INTO mascotas (nombre, raza, color, estado, ultima_visto, ubicacion_actual, id_ubicacion, id_usuario) 
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            INSERT INTO mascotas (nombre, raza, color, estado, ultima_visto, ubicacion_actual, imagen_url, id_ubicacion, id_usuario) 
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
-        cursor.execute(query_mascota, (nombre, raza, color, estado, ultima_visto, ubicacion_actual, id_ubicacion, user_id))
+        cursor.execute(query_mascota, (nombre, raza, color, estado, ultima_visto, ubicacion_actual, imagen_url, id_ubicacion, user_id))
         connection.commit()
         cursor.close()
         connection.close()
@@ -120,6 +121,7 @@ def registrar_mascota():
         return jsonify({"msg": "Mascota registrada con éxito"}), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 @app.route('/api/mascota', methods=['GET'])
 @app.route('/api/mascota/<int:id_mascota>', methods=['GET'])  # Ruta para obtener una mascota por su id
@@ -176,6 +178,7 @@ def obtener_mascotas(id_mascota=None):
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 
 @app.route('/api/usuario', methods=['GET'])

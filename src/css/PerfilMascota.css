@@ -1,3 +1,37 @@
+.perfil-jumbotron {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 200px 0; /* Mantiene la altura del jumbotron */
+  border-radius: 3px;
+  background-image: url("../img/Perritos14.jpg"); /* Cambia la URL por la imagen deseada */
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  width: 100%; /* Hace que el jumbotron ocupe todo el ancho de la pantalla */
+}
+
+/* Establece un contenedor con un ancho limitado y centrado */
+.perfil-container {
+  max-width: 2000px; /* Establece un ancho máximo para el contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 0 20px; /* Ajuste para que no toque los bordes */
+}
+
+.perfil-jumbotron .container {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+.perfil-jumbotron .display-4 {
+  margin: 20px 100px; /* Elimina cualquier margen predeterminado */
+}
+
+/* Estilos para la tarjeta de mascota */
 .mascota-card {
   max-width: 600px;
   margin: 20px auto;
@@ -11,14 +45,15 @@
 .mascota-card-header {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
 }
 
 .mascota-photo {
-  width: 150px;
-  height: 150px;
+  width: 450px;
+  height: 350px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 8px;
   border: 2px solid #ddd;
 }
 
@@ -37,12 +72,86 @@
   font-size: 1rem;
   margin: 5px 0;
   color: #555;
+  line-height: 1.5;
 }
 
-.mascota-card-body strong {
-  font-weight: bold;
+.mascota-info-card {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  border: 2px dashed #aaa;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.mascota-card-body p:last-child {
-  margin-bottom: 0;
+.mascota-info-card h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.mascota-info-card p {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 12px 0;
+  line-height: 1.5;
+}
+
+/* Estilos para los botones de compartir */
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.share-buttons .btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.share-buttons .btn-facebook {
+  background-color: #4267b2;
+  color: white;
+}
+
+.share-buttons .btn-facebook:hover {
+  background-color: #365899;
+}
+
+.share-buttons .btn-instagram {
+  background-color: #e4405f;
+  color: white;
+}
+
+.share-buttons .btn-instagram:hover {
+  background-color: #d02c50;
+}
+
+.share-buttons .btn-download {
+  background-color: #4caf50;
+  color: white;
+}
+
+.share-buttons .btn-download:hover {
+  background-color: #45a049;
+}
+
+/* Estilos para el botón de volver */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
 }

@@ -5,7 +5,6 @@ import "../css/HogarTemporal.css";
 const TemporaryHome = ({ dogs, goToRegister }) => {
   return (
     <div className="temporary-home-container">
-      {/* Jumbotron */}
       <div className="hero-section-temporary">
         <div className="container text-center text-white">
           <Row>
@@ -15,6 +14,13 @@ const TemporaryHome = ({ dogs, goToRegister }) => {
                 APOYA A UN PERRITO DE LA CALLE
               </p>
             </Col>
+          </Row>
+        </div>
+      </div>
+      <div className="hero-section-temporary">
+        <div className="container text-center text-white">
+          <Row>
+            <Col></Col>
           </Row>
         </div>
       </div>

@@ -1,0 +1,171 @@
+.estadisticas-container-fluid {
+  text-align: center;
+  padding: 20px;
+  background-color: #f2cece;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.additional-card-container {
+  margin-top: 30px;
+}
+
+.estadisticas-card {
+  background-color: #f2a6a6;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: left;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  padding: 30px 0;
+  color: white;
+}
+
+.heading-large {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 30px;
+}
+
+.paragraph-large {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 15px;
+  text-align: left;
+  margin-left: 50px;
+}
+
+/* Sección hero */
+.hero-section-estadisticas {
+  background-image: url("../img/Perritos1.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero-section-estadisticas .container {
+  color: #fff;
+  text-align: left;
+  max-width: 600px;
+}
+
+.hero-section-estadisticas h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: left;
+  margin-left: -50px;
+  color: #fff;
+}
+
+.hero-section-estadisticas p {
+  font-size: 1rem;
+  text-align: left;
+  margin-left: -50px;
+  color: #fff;
+}
+
+.hero-section-estadisticas-2 {
+  background-image: url("../img/Perritos9.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero-section-estadisticas-2 .container {
+  color: #fff;
+  text-align: left;
+  max-width: 600px;
+}
+.hero-section-estadisticas-2 h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: left;
+  margin-left: -50px;
+  color: #fff;
+}
+.hero-section-estadisticas-2 p {
+  font-size: 1rem;
+  text-align: left;
+  margin-left: -50px;
+  color: #fff;
+}
+
+/* Cards de estadísticas: disposición en fila */
+.estadisticas-cards-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten si no caben en una línea */
+  gap: 20px; /* Espacio entre las tarjetas */
+  justify-content: center; /* Centra las tarjetas en la línea */
+  width: 100%;
+}
+
+button.ml-3 {
+  margin-left: 10px;
+}
+
+button.btn-danger {
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+  width: 100px;
+}
+
+button.btn-danger:hover {
+  background-color: #c82333;
+}
+
+button.btn-info {
+  background-color: #17a2b8;
+  width: 100px;
+}
+
+button.btn-warning {
+  background-color: #ffc107;
+  width: 100px;
+}
+
+button.btn-info:hover {
+  background-color: #138496;
+}
+
+button.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+/* Modificación para separar más el botón Fundación */
+button.btn-success {
+  background-color: #28a745;
+  width: 100px;
+  margin-left: 20px; /* Aumenta el margen para mayor separación */
+}
+
+button.btn-success:hover {
+  background-color: #218838;
+}
+
+/* Alineación de los botones */
+.estadisticas-card .text-center {
+  display: flex;
+  justify-content: center; /* Alinea los botones de manera centrada */
+  gap: 15px; /* Añade un espacio uniforme entre los botones */
+}
+
+/* Estilo común para los botones */
+button {
+  width: 150px; /* Asegura que todos los botones tengan el mismo ancho */
+  padding: 10px; /* Agrega algo de padding para hacer los botones más grandes */
+  text-align: center; /* Alinea el texto al centro */
+}

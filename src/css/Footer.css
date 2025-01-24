@@ -1,0 +1,82 @@
+/* Estilos principales del footer */
+.footer-section {
+  background-color: #fff;
+  color: black;
+  font-family: "Arial", sans-serif;
+  padding: 1px 0; /* Reducir padding para que no sea tan grande */
+}
+
+.footer-section a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #62a773;
+}
+
+.footer-section .container {
+  padding: 0 2px; /* Ajustar padding */
+}
+
+.footer-section .row {
+  margin-bottom: 2px; /* Reducir margen inferior */
+}
+
+/* Sección inferior del footer */
+.footer-bottom {
+  background-color: #333;
+  color: white;
+  padding: 2px 0; /* Reducir padding para hacerlo más pequeño */
+}
+
+.footer-bottom a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #ffffff;
+}
+
+/* Estilos para redes sociales */
+.footer-section .social-icons a {
+  font-size: 1rem; /* Reducir el tamaño de los iconos */
+  margin: 0 2px; /* Reducir el espacio entre iconos */
+  color: black;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-section .social-icons a:hover {
+  transform: scale(1.1); /* Reducir el tamaño al pasar el cursor */
+  color: #2f3dd1;
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  .footer-section {
+    text-align: center;
+  }
+
+  .footer-section .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section .col-md-2 {
+    margin-bottom: 10px;
+  }
+
+  .footer-section .social-icons {
+    margin-top: 15px; /* Reducir el margen superior de los iconos */
+  }
+}
+
+/* Centrar la imagen del logo en el footer */
+.footer-logo {
+  display: block;
+  margin: 10px auto; /* Reducir el margen */
+  max-width: 250px; /* Ajustar el tamaño más pequeño */
+  height: auto;
+}

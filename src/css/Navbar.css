@@ -4,6 +4,7 @@
   position: relative;
   z-index: 1;
   padding: 0.1rem 3rem;
+  margin-bottom: 30px; /* Añade espacio debajo del navbar */
 }
 
 .navbar-custom .navbar-toggler {
@@ -31,6 +32,27 @@
   justify-content: flex-end; /* Alinea los elementos a la derecha */
 }
 
+.navbar-custom .registro-mascota-btn {
+  background-color: #fff;
+  width: 90px;
+  color: #333; /* Color del texto */
+  border-radius: 50px; /* Bordes redondeados para un estilo ovalado */
+  padding: 10px 20px; /* Asegura que el botón tenga suficiente espacio */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+  font-weight: bold; /* Para hacer el texto más destacado */
+}
+
+.navbar-custom .registro-mascota-btn:hover {
+  background-color: orange; /* Cambia a naranja al pasar el ratón */
+  transform: scale(
+    1.05
+  ); /* Aumenta ligeramente el tamaño del botón al pasar el cursor */
+}
+
+.navbar-custom .registro-mascota-btn:active {
+  background-color: darkorange; /* Cambia a un color más oscuro al hacer clic */
+}
+
 /* Estilo para el logo */
 .navbar-logo {
   width: 150px; /* Ajusta el tamaño del logo */
@@ -40,4 +62,10 @@
 body {
   margin: 0;
   overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+/* Estilo general para separar los componentes del Navbar */
+.container,
+.row {
+  margin-top: 30px; /* Añade espacio en la parte superior de los componentes */
 }

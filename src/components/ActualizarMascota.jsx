@@ -10,6 +10,7 @@ function ActualizarMascota() {
   const [comuna, setComuna] = useState("");
   const [calle, setCalle] = useState("");
   const [numero, setNumero] = useState("");
+  const [fotos, setFotos] = useState([]); // Cambio aquí, para manejar varios archivos
 
   const handleActualizar = async (e) => {
     e.preventDefault();
@@ -20,21 +21,26 @@ function ActualizarMascota() {
     }
 
     try {
+      const formData = new FormData();
+      formData.append("nombre", nombre);
+      formData.append("raza", raza);
+      formData.append("color", color);
+      formData.append(
+        "ubicacion",
+        JSON.stringify({ region, comuna, calle, numero })
+      );
+
+      // Agregar las fotos seleccionadas
+      fotos.forEach((foto) => formData.append("fotos", foto));
+
       await axios.put(
         `http://127.0.0.1:5000/api/actualizar_mascota/${id}`,
+        formData,
         {
-          nombre,
-          raza,
-          color,
-          ubicacion: {
-            region,
-            comuna,
-            calle,
-            numero,
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data", // Aseguramos que el contenido sea multipart
           },
-        },
-        {
-          headers: { Authorization: `Bearer ${token}` },
         }
       );
       alert("Mascota actualizada con éxito");
@@ -44,6 +50,10 @@ function ActualizarMascota() {
         error.response ? error.response.data : error.message
       );
     }
+  };
+
+  const handleFotosChange = (e) => {
+    setFotos([...e.target.files]); // Guardar todos los archivos seleccionados
   };
 
   return (
@@ -146,6 +156,21 @@ function ActualizarMascota() {
             onChange={(e) => setNumero(e.target.value)}
           />
         </div>
+
+        {/* Cambiado a 'multiple' para permitir seleccionar varios archivos */}
+        <div className="mb-3">
+          <label htmlFor="fotos" className="form-label">
+            Fotos de la Mascota
+          </label>
+          <input
+            type="file"
+            className="form-control"
+            id="fotos"
+            multiple // Permite seleccionar varios archivos
+            onChange={handleFotosChange}
+          />
+        </div>
+
         <button type="submit" className="btn btn-primary">
           Actualizar
         </button>

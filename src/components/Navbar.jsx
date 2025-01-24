@@ -16,7 +16,6 @@ function BasicNavbar() {
             alt="Logo Patitas Unidas"
             className="navbar-logo"
           />
-          <span className="ms-2"></span> {/* Espacio entre logo y nombre */}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -24,18 +23,35 @@ function BasicNavbar() {
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
+            <Nav.Link as={Link} to="/perfil">
+              Mi Perfil
+            </Nav.Link>
+            <NavDropdown title="Mascotas" id="basic-nav-dropdown">
+              <NavDropdown.Item as={Link} to="/buscar">
+                Buscar
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/estadisticas">
+                Perdidos
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/hogar_temporal">
+                Hogar Temporal
+              </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
+              <NavDropdown.Item as={Link} to="/tips">
+                Patitas Unidas Tips
               </NavDropdown.Item>
             </NavDropdown>
+          </Nav>
+
+          {/* Botón Registrar Mascota en la esquina derecha */}
+          <Nav>
+            <Nav.Link
+              as={Link}
+              to="/registrar"
+              className="registro-mascota-btn"
+            >
+              Registrar Mascota
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -27,8 +27,8 @@ function RecuperarContraseña() {
   };
 
   return (
-    <div className="recuperar-container">
-      <h1>Recuperar Contraseña</h1>
+    <div className="recuperar-container row d-flex justify-content-center">
+      <h3>Recuperar Contraseña</h3>
       <form onSubmit={handleRecuperarContraseña}>
         <div className="mb-3">
           <label htmlFor="correo" className="form-label">

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Para redirigir a la página de perfil
+import { Modal, Button } from "react-bootstrap"; // Importamos Modal y Button
 
 function RegistrarMascota() {
   const [nombre, setNombre] = useState("");
@@ -13,12 +14,23 @@ function RegistrarMascota() {
   const [comuna, setComuna] = useState("");
   const [calle, setCalle] = useState("");
   const [numero, setNumero] = useState("");
+  const [imagen, setImagen] = useState(null); // estado para la imagen
+
+  const [showModal, setShowModal] = useState(false); // Estado para mostrar el modal
 
   const navigate = useNavigate(); // Usamos useNavigate para redirigir
 
+  const handleImagenChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImagen(file);
+    }
+  };
+
   const handleRegistrar = async (e) => {
     e.preventDefault();
-    let token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
+    console.log("Token: ", token);
     if (!token) {
       alert("Token no encontrado. Por favor, inicie sesión nuevamente.");
       navigate("/login"); // Redirigir al login si no hay token
@@ -26,6 +38,20 @@ function RegistrarMascota() {
     }
 
     try {
+      let imageUrl = "";
+
+      // Si se seleccionó una imagen, la subimos a Cloudinary
+      if (imagen) {
+        const formData = new FormData();
+        formData.append("file", imagen);
+        formData.append("upload_preset", "patitas_unidas"); // Cambia 'your_upload_preset' por tu configuración
+        const uploadRes = await axios.post(
+          "http://res.cloudinary.com/dyxvazlpg/image/upload/v1735070220/yohwpmac5cjysaez1puf.jpg",
+          formData
+        );
+        imageUrl = uploadRes.data.secure_url; // Obtenemos la URL de la imagen subida
+      }
+
       await axios.post(
         "http://127.0.0.1:5000/api/registrar_mascota",
         {
@@ -33,6 +59,7 @@ function RegistrarMascota() {
           raza,
           color,
           estado,
+          imagen_url: imageUrl, // Agregamos la URL de la imagen si está disponible
           ultima_visto: estado === "Buscada" ? ultimaVisto : null,
           ubicacion_actual: estado === "Encontrada" ? ubicacionActual : null,
           ubicacion: { region, comuna, calle, numero },
@@ -69,10 +96,19 @@ function RegistrarMascota() {
     return `${year}-${month}-${day}T${hours}:${minutes}`; // Formato: yyyy-MM-ddTHH:mm
   };
 
+  // Función para manejar el modal
+  const handleShowModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
+
+  // Función para redirigir a /mascotas
+  const handleVolver = () => {
+    navigate("/mascotas"); // Redirige a la página de mascotas
+  };
+
   return (
     <div className="container">
       <h2>Registrar Mascota</h2>
-      <form onSubmit={handleRegistrar}>
+      <form onSubmit={(e) => e.preventDefault()}>
         <div className="mb-3">
           <label htmlFor="nombre" className="form-label">
             Nombre
@@ -199,10 +235,60 @@ function RegistrarMascota() {
             onChange={(e) => setNumero(e.target.value)}
           />
         </div>
-        <button type="submit" className="btn btn-primary">
-          Registrar
-        </button>
+        <div className="mb-3">
+          <label htmlFor="imagen" className="form-label">
+            Imagen de la Mascota
+          </label>
+          <input
+            type="file"
+            className="form-control"
+            id="imagen"
+            onChange={handleImagenChange}
+          />
+        </div>
+
+        <div className="d-flex flex-column gap-2">
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={handleShowModal}
+          >
+            Registrar
+          </button>
+          <button
+            type="button"
+            className="btn btn-warning"
+            onClick={handleVolver}
+          >
+            Volver
+          </button>
+        </div>
       </form>
+
+      {/* Modal */}
+      <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Advertencias</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <ul>
+            <li>Recuerde nunca compartir su información privada.</li>
+            <li>Agregue fotos de su mascota.</li>
+            <li>
+              Coordine el encuentro en espacios abiertos y con otras personas
+              presentes.
+            </li>
+          </ul>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Cancelar
+          </Button>
+          <Button variant="primary" onClick={handleRegistrar}>
+            Confirmar Registro
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }
